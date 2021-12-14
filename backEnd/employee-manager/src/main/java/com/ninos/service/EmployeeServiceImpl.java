@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public Employee createEmployee(Employee employee) {
+    public Employee saveEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 
