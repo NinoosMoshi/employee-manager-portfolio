@@ -1,6 +1,7 @@
+import { EmployeeListSaveComponent } from './../employee-list-save/employee-list-save.component';
 import { Employee } from './../../model/employee';
 import { EmployeeService } from './../../services/employee.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-employee-list',
@@ -10,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class EmployeeListComponent implements OnInit {
 
   employess!:Employee[];
+
+  @ViewChild(EmployeeListSaveComponent) saveEmployee:EmployeeListSaveComponent | undefined;
 
   constructor(private employeeService: EmployeeService) { }
 
@@ -22,6 +25,10 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.getEmployees().subscribe(data =>{
       this.employess = data;
     })
+  }
+
+  createProductRequest(){
+    this.saveEmployee?.showEmployeeModal();
   }
 
 }
