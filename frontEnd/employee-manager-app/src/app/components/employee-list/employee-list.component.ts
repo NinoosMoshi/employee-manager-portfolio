@@ -13,6 +13,8 @@ export class EmployeeListComponent implements OnInit {
 
   employess!:Employee[];
 
+  selectEmployee: Employee = new Employee();
+
   @ViewChild(EmployeeListSaveComponent) saveEmployee:EmployeeListSaveComponent | undefined;
 
   @ViewChild(EmployeeListViewComponent) viewEmployee:EmployeeListViewComponent | undefined;
@@ -31,6 +33,12 @@ export class EmployeeListComponent implements OnInit {
   }
 
   createEmployeeRequest(){
+    this.selectEmployee = new Employee();
+    this.saveEmployee?.showEmployeeModal();
+  }
+
+  editEmployeeRequest(item: Employee){
+    this.selectEmployee = Object.assign({}, item);
     this.saveEmployee?.showEmployeeModal();
   }
 
@@ -39,7 +47,16 @@ export class EmployeeListComponent implements OnInit {
   }
 
   receivedFromSave(employee: Employee){
-     this.employess.push(employee);
+
+    let itemIndex = this.employess.findIndex(item => item.id === employee.id);
+
+    if(itemIndex !== -1){
+      this.employess[itemIndex] = employee;
+    }else{
+      this.employess.push(employee);
+    }
+
+
   }
 
 }

@@ -41,7 +41,7 @@
               <td>
                 <div>
                 <button (click)="viewEmployeeRequest()"  class="btn btn-sm btn-info mr-1"><i class="fa fa-eye"></i>View</button>
-                <button  class="btn btn-sm btn-warning mr-1"><i class="fa fa-edit" ></i>Edit</button>
+                <button (click)="editEmployeeRequest(temp)"  class="btn btn-sm btn-warning mr-1" ><i class="fa fa-edit"></i>Edit</button>
                 <button  class="btn btn-sm btn-danger"><i class="fa fa-times" style="color:rgb(253, 253, 253)"></i>Delete</button>
                 </div>
               </td>
@@ -53,5 +53,5 @@
 </div>
 
 
-<app-employee-list-save (save)="receivedFromSave($event)"></app-employee-list-save>
+<app-employee-list-save [employee]="selectEmployee" (save)="receivedFromSave($event)"></app-employee-list-save>
 <app-employee-list-view></app-employee-list-view>

@@ -15,7 +15,7 @@ export class EmployeeListSaveComponent implements OnInit {
 
   errorMessage: string = '';
 
-  employee: Employee = new Employee();
+  @Input() employee: Employee = new Employee();
 
   @Output() save = new EventEmitter();
 
