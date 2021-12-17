@@ -42,7 +42,8 @@ export class EmployeeListComponent implements OnInit {
     this.saveEmployee?.showEmployeeModal();
   }
 
-  viewEmployeeRequest(){
+  viewEmployeeRequest(item: Employee){
+    this.selectEmployee = item;
     this.viewEmployee?.showViewModal();
   }
 

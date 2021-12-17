@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Employee } from 'src/app/model/employee';
 
 declare var $:any;
 
@@ -8,6 +9,8 @@ declare var $:any;
   styleUrls: ['./employee-list-view.component.css']
 })
 export class EmployeeListViewComponent implements OnInit {
+
+  @Input() employee: Employee = new Employee();
 
   constructor() { }
 
