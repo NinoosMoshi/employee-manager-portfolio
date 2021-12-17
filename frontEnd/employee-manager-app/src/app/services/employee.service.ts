@@ -18,4 +18,9 @@ export class EmployeeService {
   }
 
 
+  saveEmployee(employee: Employee):Observable<Employee>{
+    return this.http.post<Employee>(this.baseUrl, employee);
+  }
+
+
 }

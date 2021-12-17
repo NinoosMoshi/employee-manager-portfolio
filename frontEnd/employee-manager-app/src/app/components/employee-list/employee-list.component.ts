@@ -1,3 +1,4 @@
+import { EmployeeListViewComponent } from './../employee-list-view/employee-list-view.component';
 import { EmployeeListSaveComponent } from './../employee-list-save/employee-list-save.component';
 import { Employee } from './../../model/employee';
 import { EmployeeService } from './../../services/employee.service';
@@ -14,6 +15,8 @@ export class EmployeeListComponent implements OnInit {
 
   @ViewChild(EmployeeListSaveComponent) saveEmployee:EmployeeListSaveComponent | undefined;
 
+  @ViewChild(EmployeeListViewComponent) viewEmployee:EmployeeListViewComponent | undefined;
+
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
@@ -27,8 +30,16 @@ export class EmployeeListComponent implements OnInit {
     })
   }
 
-  createProductRequest(){
+  createEmployeeRequest(){
     this.saveEmployee?.showEmployeeModal();
+  }
+
+  viewEmployeeRequest(){
+    this.viewEmployee?.showViewModal();
+  }
+
+  receivedFromSave(employee: Employee){
+     this.employess.push(employee);
   }
 
 }
