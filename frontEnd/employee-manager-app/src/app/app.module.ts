@@ -9,6 +9,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { EmployeeListSaveComponent } from './components/employee-list-save/employee-list-save.component';
 import { EmployeeListViewComponent } from './components/employee-list-view/employee-list-view.component'
 import { FormsModule } from '@angular/forms';
+import { EmployeeListDeleteComponent } from './components/employee-list-delete/employee-list-delete.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     NavBarComponent,
     EmployeeListComponent,
     EmployeeListSaveComponent,
-    EmployeeListViewComponent
+    EmployeeListViewComponent,
+    EmployeeListDeleteComponent
   ],
   imports: [
     BrowserModule,

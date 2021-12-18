@@ -1,0 +1,19 @@
+
+<div id="deleteModal" class="modal modal-message modal-danger fade" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header justify-content-center">
+              <i class="fab fa-gripfire fa-7x"></i>
+          </div>
+          <div class="modal-title text-center">Alert</div>
+
+          <div class="modal-body text-center">Are you sure you want to delete <span>{{employee.firstName}} {{employee.lastName}}</span> ?</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-danger" type="button" (click)="deleteEmployee()">I'm sure!</button>
+        </div>
+      </div> <!-- / .modal-content -->
+  </div> <!-- / .modal-dialog -->
+</div>
+
+

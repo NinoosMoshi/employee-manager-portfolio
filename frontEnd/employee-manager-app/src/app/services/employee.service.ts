@@ -22,5 +22,9 @@ export class EmployeeService {
     return this.http.post<Employee>(this.baseUrl, employee);
   }
 
+  deleteCourse(employee: Employee): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${employee.id}`);
+  }
+
 
 }
